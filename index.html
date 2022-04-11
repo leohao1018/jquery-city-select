@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>jQuery移动端城市联动选择插件 - 素材牛（www.sucainiu.com）</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="area.css" />
+</head>
+
+<body>
+    <div class="ui-form-item ui-border-b">
+        <label>单位地址</label>
+        <div class="ui-select">
+            <input id="expressArea" data-name="custUa" data-required="true" data-label="单位地址" placeholder="选择省市区"
+                readonly style="padding-left:0;">
+        </div>
+    </div>
+    <div class="ui-form-item ui-border-b">
+        <label>居住地址</label>
+        <div class="ui-select">
+            <input id="expressArea1" data-name="custRa" data-required="true" data-label="居住地址" placeholder="选择省市区"
+                readonly style="padding-left:0;">
+        </div>
+    </div>
+
+
+    <div class="browser">
+        <section id="areaLayer" class="express-area-box">
+            <header>
+                <h3>选择省市区</h3>
+                <div class="selet-area-wrap">
+                    <p><span class="one"></span></p>
+                    <p><span class="two"></span></p>
+                    <p><span class="three"></span></p>
+                </div>
+               
+                <a id="backUp" class="back" href="javascript:void(0)" title="返回"></a>
+                <a id="closeArea" class="close" href="javascript:void(0)" title="关闭"></a>
+            </header>
+            <article id="areaBox">
+                <ul id="areaList" class="area-list"></ul>
+            </article>
+        </section>
+        <div id="areaMask" class="mask"></div>
+    </div>
+</body>
+<script src="http://www.sucainiu.com/themes/cdn/jquery/jquery-1.10.2.js"></script>
+<script src="jquery.area.js" type="text/javascript" charset="utf-8"></script>
+
+
+</html>
