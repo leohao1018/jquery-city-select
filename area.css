@@ -72,11 +72,11 @@
 
 .express-area-box header .back {
 	display: none;
-	left: 0;
+	left: 10px;
 }
 
 .express-area-box header .close {
-	right: 0;
+	right: 10px;
 }
 
 .express-area-box article {
