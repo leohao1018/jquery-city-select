@@ -524,6 +524,10 @@ var district = [
 ];
 var expressArea, areaCont, areaList = $("#areaList"), areaTop = areaList.offset().top;
 
+$(function(){
+    intProvince(1);
+})
+
 /*初始化省份*/
 function intProvince(flag) {
     areaCont = "";
@@ -542,7 +546,7 @@ function intProvince(flag) {
     }
     $('.selet-area-wrap .two').html("").removeClass("current").attr("onClick", ";");
 }
-intProvince(1);
+
 
 /*选择省份*/
 function selectP(p, flag) {
@@ -602,12 +606,15 @@ function selectC(p, c) {
 function selectD(p, c, d) {
     clockArea();
     expressArea += district[p][c][d];
-    if ($("#areaLayer").attr('flag') == '0') {
-        $("#expressArea").attr("value", expressArea);
-    }
-    else {
-        $("#expressArea1").attr("value", expressArea);
-    }
+    var sourceElmentId = $("#areaLayer").attr('sourceElmentId');
+    $("#" + sourceElmentId).attr("value", expressArea);
+
+    // if ($("#areaLayer").attr('sourceElmentId') == '0') {
+    //     $("#expressArea").attr("value", expressArea);
+    // }
+    // else {
+    //     $("#expressArea1").attr("value", expressArea);
+    // }
     $('.selet-area-wrap .one').html(" ").removeClass("current");
 }
 
@@ -618,15 +625,6 @@ function clockArea() {
     intProvince(1);
 }
 
-/*打开省市区选项*/
-$("#expressArea").click(function () {
-    $("#areaMask").fadeIn();
-    $("#areaLayer").animate({ "bottom": 0 }).attr("flag", "0");
-});
-$("#expressArea1").click(function () {
-    $("#areaMask").fadeIn();
-    $("#areaLayer").animate({ "bottom": 0 }).attr("flag", "1");
-});
 /*关闭省市区选项*/
 $("#areaMask, #closeArea").click(function () {
     clockArea();
@@ -642,5 +640,4 @@ function quickselectC(p, c) {
 function selectPP(p, c) {
     $('.selet-area-wrap .two').html("").removeClass("current");
     selectP(p, c);
-
 }
